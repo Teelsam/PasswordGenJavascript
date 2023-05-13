@@ -35,7 +35,7 @@ function writePassword() {
           //iterating through the length asked for and randomly picking from alphabet, myArray is filled with random letters.
           var passPicker = Math.floor(Math.random()*26);
           myArray[i]=alphabet[passPicker];
-          function isOdd{
+          function isOdd(){
             return i%2;
           }
           if (isOdd = 1){
@@ -70,6 +70,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;  
   return myArray;
+}
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
