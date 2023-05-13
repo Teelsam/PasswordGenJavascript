@@ -64,6 +64,9 @@ function writePassword() {
           myArray[i]=passPicker;
       }
    }
+   else {
+    console.log("woops nothing went...");
+   }
   var passwordText = document.querySelector("#password");
   passwordText.value = password;  
   return myArray;
