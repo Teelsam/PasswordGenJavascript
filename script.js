@@ -7,37 +7,66 @@ var special = ["!","'","#","$"];
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  //Here we generate the password
+  var password = generatePassword();{ 
+    var myArray =[];                                  
+      var passLength = window.prompt("How many characters long would you like in the password?");
+      var passSymbol = window.prompt("Include Special Symbols?");
+      var passUppers = window.prompt("Include Uppercase?");
+      var passLowers = window.prompt("Include Lowers?");
+      var passNum = window.prompt("Include Numbers?");
 
-  passwordText.value = password;
-  generatePassword();{
-      var passLength = window.prompt("How long would you like the password?");
-      if (passLength => 8 && passLength =< 20){
-        var passSpecial = window.prompt("Would you like special characters?");
-        var passUppers = window.prompt("Would you like Uppercase characters?");
-        var passLowers = window.prompt("Would you like Lowercase characters?");
-        var passNum = window.prompt("Would you like Number characters?");
-        if (passSpecial =="yes"){
-          for (var i =0;i<passLength;i++){
-            //iterating through the length asked for and randomly picking from alphabet, myArray is filled with random letters.
-            var passPicker = Math.floor(Math.random()*26);
-            var myArray =[];
-            myArray[i]=alphabet[passPicker];
-          }
+      if (passLength > 8 && passLength < 128) {
+        for (var i =0;i<passLength;i++){
+              //iterating through the length asked for and randomly picking from alphabet, myArray is filled with random letters.
+              var passPicker = Math.floor(Math.random()*26);
+              myArray[i]=alphabet[passPicker];
+            }
+      }
+      else if (passSymbol == "yes"){
+        for (var i =0;i<passLength;i++){
+          //iterating through the length asked for and randomly picking from alphabet, myArray is filled with random letters.
+          var passPicker = Math.floor(Math.random()*26);
+          myArray[i]=special[passPicker];
         }
-        else if (passSpecial =="yes" && passUppers =="yes"){
-          for (var i =0;i<passLength;i++){
-            //iterating through the length asked for and randomly picking from alphabet, myArray is filled with random letters.
-            var passPicker = Math.floor(Math.random()*26);
-            var myArray =[];
-            myArray[i]=alphabet[passPicker];
-            myArray[i]=myArray[i].toUpperCase();
+      }
+      else if (passUppers=="yes"){
+        for (var i =0;i<passLength;i++){
+          //iterating through the length asked for and randomly picking from alphabet, myArray is filled with random letters.
+          var passPicker = Math.floor(Math.random()*26);
+          myArray[i]=alphabet[passPicker];
+          function isOdd{
+            return i%2;
+          }
+          if (isOdd = 1){
+            myArray[i].toUppercase();
           }
         }
       }
-  }
+      else if (passLowers == "yes"){
+        for (var i =0;i<passLength;i++){
+          //iterating through the length asked for and randomly picking from alphabet, myArray is filled with random letters.
+          var passPicker = Math.floor(Math.random()*26);
+          myArray[i]=alphabet[passPicker];
+          myArray[i].toUpperCase();
+          function isOdd{
+            return i%2;
+          }
+          if (isOdd = 1){
+            myArray[i].toLowercase();
+          }
+        }
+      }
+      else if (passNum=="yes"){
+        for (var i =0;i<passLength;i++){
+          //iterating through the length asked for and randomly picking from alphabet, myArray is filled with random letters.
+          var passPicker = Math.floor(Math.random()*9);
+          myArray[i]=passPicker;
+      }
+   }
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;  
+  return myArray;
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
