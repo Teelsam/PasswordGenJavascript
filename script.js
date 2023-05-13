@@ -49,7 +49,7 @@ function writePassword() {
           var passPicker = Math.floor(Math.random()*26);
           myArray[i]=alphabet[passPicker];
           myArray[i].toUpperCase();
-          function isOdd{
+          function isOdd(){
             return i%2;
           }
           if (isOdd = 1){
