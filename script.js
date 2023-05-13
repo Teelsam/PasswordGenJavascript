@@ -26,7 +26,7 @@ function writePassword() {
       else if (passSymbol == "yes"){
         for (var i =0;i<passLength;i++){
           //iterating through the length asked for and randomly picking from alphabet, myArray is filled with random letters.
-          var passPicker = Math.floor(Math.random()*26);
+          var passPicker = Math.floor(Math.random()*4);
           myArray[i]=special[passPicker];
         }
       }
