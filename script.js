@@ -6,7 +6,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   function generatePassword(){
-    //Prompts 
+    //Prompts look for a way to turn answers to numbers
     var length = window.prompt ("How long do you want the password?");
     var upChoice = window.prompt("UpperCase?");
     var lowChoice = window.prompt("LowerCase?");
@@ -24,26 +24,26 @@ function writePassword() {
     // myPass += number[Math.floor(Math.random()*number.length)];
     // myPass += symbol[Math.floor(Math.random()*symbol.length)];
 
-    if (length >= 8 && length <= 128 && !upChoice && !lowChoice && !numChoice && !symbolChoice){
+    if (length >= 8 && length <= 128 && upChoice !== "yes" && lowChoice !== "yes" && numChoice !== "yes" && symbolChoice!== "yes"){
       //gens the simplest password
       for(var i =0; i>length;i++){
         myPass += lowerCase[Math.floor(Math.random()*lowerCase.length)];
       }
     }
-    else if (length >= 8 && length <= 128 && upChoice && !lowChoice && !numChoice && !symbolChoice){
+    else if (length >= 8 && length <= 128 && upChoice && lowChoice !== "yes"  && numChoice !== "yes"  && symbolChoice !== "yes"){
       //gens an all uppercase pass
     for(var i =0; i>length;i++){
       myPass += upperCase[Math.floor(Math.random()*upperCase.length)];
     }
   }
-    else if (length >= 8 && length <= 128 && upChoice && lowChoice && !numChoice && !symbolChoice){
+    else if (length >= 8 && length <= 128 && upChoice && lowChoice && numChoice !== "yes" && symbolChoice !== "yes"){
       //gens an upper and lower case pass
       var uppAndLow = upperCase + lowerCase;
       for(var i =0; i>length;i++){
         myPass += uppAndLow[Math.floor(Math.random()*uppAndLow.length)];
       }
     }
-    else if (length >= 8 && length <= 128 && upChoice && lowChoice && numChoice && !symbolChoice){
+    else if (length >= 8 && length <= 128 && upChoice && lowChoice && numChoice && symbolChoice !== "yes"){
       // gens an upper lower and number pass
       var uppLowNum = upperCase + lowerCase + number;
       for(var i =0; i>length;i++){
