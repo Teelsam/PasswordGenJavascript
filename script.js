@@ -8,6 +8,7 @@ function writePassword() {
   function generatePassword(){
     //Prompts look for a way to turn answers to numbers
     var length = window.prompt ("How long do you want the password?");
+    var lengthAsNum = parseInt(length);
     var upChoice = window.prompt("UpperCase?");
     var lowChoice = window.prompt("LowerCase?");
     var numChoice = window.prompt("numbers?");
