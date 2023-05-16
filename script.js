@@ -1,16 +1,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var prompt = window.prompt("Hello???");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+
   function generatePassword(){
+    //Prompts 
     var length = window.prompt ("How long do you want the password?");
     var upChoice = window.prompt("UpperCase?");
     var lowChoice = window.prompt("LowerCase?");
     var numChoice = window.prompt("numbers?");
     var symbolChoice = window.prompt("symbols?");
+    //Character options
     var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var lowerCase= "abcdefghijklmnopqrstuvwxyz";
     var number = "123456789";
@@ -61,7 +63,7 @@ function writePassword() {
   passwordText.value = password;
 
 };
-
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
