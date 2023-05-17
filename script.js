@@ -34,61 +34,75 @@ function writePassword() {
   }
 
     //Character options FOR UPPER COMBO
-    if(uppercaseChoice == true && !lowChoice && !numChoice && !symbolChoice){//creates an array of possible uppercase values
+    if(uppercaseChoice == true && !lowChoice && !numChoice && !symbolChoice){ // just Uppers
       for(var i =0;i<lengthAsNum.length;i++){
         var randomIndex = Math.floor(Math.random()*upperCaseList.length);
         possiblePassChars[i]=randomIndex;
       }
     }
-    else if(uppercaseChoice == true && lowChoice == true && !numChoice && !symbolChoice){//creates an array of possible uppercase values
+    else if(uppercaseChoice == true && lowChoice == true && !numChoice && !symbolChoice){// uppers and lowers
       for(var i =0;i<lengthAsNum.length;i++){
         var randomIndex = Math.floor(Math.random()*upperCaseList.length);
         possiblePassChars[i]=randomIndex;
       }
     }
-    else if(uppercaseChoice == true && !lowChoice && numChoice == true && !symbolChoice){//creates an array of possible uppercase values
+    else if(uppercaseChoice == true && !lowChoice && numChoice == true && !symbolChoice){// uppers and numbers
       for(var i =0;i<lengthAsNum.length;i++){
         var randomIndex = Math.floor(Math.random()*upperCaseList.length);
         possiblePassChars[i]=randomIndex;
       }
-    }else if(uppercaseChoice == true && !lowChoice && !numChoice  && symbolChoice== true){//creates an array of possible uppercase values
-      for(var i =0;i<lengthAsNum.length;i++){
-        var randomIndex = Math.floor(Math.random()*upperCaseList.length);
-        possiblePassChars[i]=randomIndex;
-      }
-    }
-    else if(uppercaseChoice == true && lowChoice == true && !numChoice  && !symbolChoice){//creates an array of possible uppercase values
+    }else if(uppercaseChoice == true && !lowChoice && !numChoice  && symbolChoice== true){ // uppers and symbols
       for(var i =0;i<lengthAsNum.length;i++){
         var randomIndex = Math.floor(Math.random()*upperCaseList.length);
         possiblePassChars[i]=randomIndex;
       }
     }
-    else if(uppercaseChoice == true && lowChoice == true && numChoice == true  && !symbolChoice){//creates an array of possible uppercase values
+    else if(uppercaseChoice == true && lowChoice == true && numChoice == true  && !symbolChoice){ // uppers lowers and numbers
         for(var i =0;i<lengthAsNum.length;i++){
           var randomIndex = Math.floor(Math.random()*upperCaseList.length);
           possiblePassChars[i]=randomIndex;
         }
     }   
     // ALL THE LOW COMBO
-    else if(lowChoice == true&& !uppercaseChoice && !numChoice && !symbolChoice){//creates an array of possible lowercase values
+    else if(lowChoice == true&& !uppercaseChoice && !numChoice && !symbolChoice){// just lowers
       for(var i=0;i<lengthAsNum.length;i++){
         var randomIndex = Math.floor(Math.random()*lowerCaseList.length);
         possiblePassChars[i]=randomIndex;
       }
     }
-    else if(lowChoice == true&& uppercaseChoice && !numChoice && !symbolChoice){//creates an array of possible lowercase values
+    else if(lowChoice == true&& !uppercaseChoice && numChoice == true && !symbolChoice){ //  lowers and numbers
       for(var i=0;i<lengthAsNum.length;i++){
         var randomIndex = Math.floor(Math.random()*lowerCaseList.length);
         possiblePassChars[i]=randomIndex;
       }
     }
-    else if(numChoice == true && !lowChoice && !uppercaseChoice && !symbolChoice){//creates an array of possible number values
+    else if(lowChoice == true&& !uppercaseChoice && !numChoice && symbolChoice == true){ // lowers and symbols 
+      for(var i=0;i<lengthAsNum.length;i++){
+        var randomIndex = Math.floor(Math.random()*lowerCaseList.length);
+        possiblePassChars[i]=randomIndex;
+      }
+    }
+    else if(lowChoice == true&& !uppercaseChoice && numChoice == true && symbolChoice == true){// lowers numbers symbols 
+      for(var i=0;i<lengthAsNum.length;i++){
+        var randomIndex = Math.floor(Math.random()*lowerCaseList.length);
+        possiblePassChars[i]=randomIndex;
+      }
+    }
+    // NUM COMBOS
+    else if(numChoice == true && !lowChoice && !uppercaseChoice && !symbolChoice){// just numbers
       for(var i=0;i<lengthAsNum.length;i++){
         var randomIndex = Math.floor(Math.random()*numberList.length);
         possiblePassChars[i]=randomIndex;
       }
     }
-    else if(symbolChoice == true && !lowChoice && !numChoice && !uppcaseChoice){//creates an array of possible symbol values
+    else if(numChoice == true && !lowChoice && !uppercaseChoice && symbolChoice == true){ // numbers and symbols 
+      for(var i=0;i<lengthAsNum.length;i++){
+        var randomIndex = Math.floor(Math.random()*numberList.length);
+        possiblePassChars[i]=randomIndex;
+      }
+    }
+    // SYMBOL COMBO
+    else if(symbolChoice == true && !lowChoice && !numChoice && !uppcaseChoice){// just symbols 
       for(var i=0;i<lengthAsNum.length;i++){
         var randomIndex = Math.floor(Math.random()*symbolList.length);
         possiblePassChars[i]=randomIndex;
