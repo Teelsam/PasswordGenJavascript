@@ -4,11 +4,11 @@
 
 ## Description
 
-    Here is my password generator button with questions that add specificity to the password generated. This being a week three challenge, we are given a started code and have to work around learning its already created pieces which we will add our code to. In this case i added the generatepassword() functions code. Using the code we learned in our first week of javascript I have coded alot of if/elses.
+ Here is my password generator button with questions that add specificity to the password generated. This being a week three challenge, we are given a started code and have to work around learning its already created pieces which we will add our code to. In this case i added the generatepassword() functions code. Using the code we learned in our first week of javascript I have coded alot of if/elses.
 
 ## Usage
 
-    Simply press the big red button and follow through the questions allowing for a password between 8 and 128 characters to be created.
+ Simply press the big red button and follow through the questions allowing for a password between 8 and 128 characters to be created.
 
 ## Table of Contents
 
