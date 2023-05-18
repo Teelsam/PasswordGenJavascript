@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  console.log(password);
+
   function generatePassword() {
     var upperCaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     var lowerCaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -16,6 +16,7 @@ function writePassword() {
     //Questioning begins
     var length = prompt("How long do you want the password?");
     var lengthAsNum = parseInt(length);
+    console.log(lengthAsNum);
     if (Number.isNaN(lengthAsNum)) { // error if entered character isnt a number
       alert("Must be a number");
       return;
@@ -34,8 +35,8 @@ function writePassword() {
       alert("Character type must be chosen");
     }
     //Character options FOR UPPER COMBO
-    if (uppercaseChoice == true && lowChoice === false && numChoice === false && symbolChoice === false) { // just Uppers
-      for (var i = 0; i < lengthAsNum.length; i++) {
+    else if (uppercaseChoice == true && lowChoice === false && numChoice === false && symbolChoice === false) { // just Uppers
+      for (var i = 0; i < lengthAsNum; i++) {
         var randomIndex = Math.floor(Math.random() * upperCaseList.length);
         possiblePassChars[i] = upperCaseList[randomIndex];
         console.log(possiblePassChars[i]);
